@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.master.mediahelper.FileUtils;
 import com.master.mediahelper.MediaHelper;
 
 import java.io.File;
@@ -68,7 +67,7 @@ public class MediaActivity extends Activity {
                         ActivityCompat.requestPermissions(MediaActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 101);
                         return;
                     }
-                    mediaHelper.file(FileUtils.MIME_TYPE_IMAGE, new MediaHelper.Callback() {
+                    mediaHelper.file(MediaHelper.MIME_TYPE_IMAGE, new MediaHelper.Callback() {
                         @Override
                         public void onResult(File file, String mimeType) {
                             Log.d(TAG, "onResult() called with: file = [" + file + "], mimeType = [" + mimeType + "]");
