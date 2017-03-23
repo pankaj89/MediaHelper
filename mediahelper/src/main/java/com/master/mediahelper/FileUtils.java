@@ -37,6 +37,7 @@ import java.text.DecimalFormat;
 import java.util.Comparator;
 
 /**
+ * Thanks to iPaulPro for aFileChooser, link https://github.com/iPaulPro/aFileChooser
  * @author Peli
  * @author paulburke (ipaulpro)
  * @version 2013-12-11
@@ -53,12 +54,7 @@ public class FileUtils {
     static final String TAG = "FileUtils";
     private static final boolean DEBUG = false; // Set to true to enable logging
 
-    public static final String MIME_TYPE_AUDIO = "audio/*";
-    public static final String MIME_TYPE_TEXT = "text/*";
-    public static final String MIME_TYPE_IMAGE = "image/*";
-    public static final String MIME_TYPE_VIDEO = "video/*";
-    public static final String MIME_TYPE_APP = "application/*";
-    public static final String MIME_TYPE_STREAM = "application/octet-stream";
+
 
     public static final String HIDDEN_PREFIX = ".";
 

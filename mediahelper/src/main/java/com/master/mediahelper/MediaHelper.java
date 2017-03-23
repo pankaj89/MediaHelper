@@ -18,7 +18,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import static android.app.Activity.RESULT_OK;
-import static com.master.mediahelper.FileUtils.MIME_TYPE_IMAGE;
 
 /**
  * Created by Pankaj on 14/2/17.
@@ -54,6 +53,13 @@ import static com.master.mediahelper.FileUtils.MIME_TYPE_IMAGE;
  */
 
 public class MediaHelper {
+
+    public static final String MIME_TYPE_AUDIO = "audio/*";
+    public static final String MIME_TYPE_TEXT = "text/*";
+    public static final String MIME_TYPE_IMAGE = "image/*";
+    public static final String MIME_TYPE_VIDEO = "video/*";
+    public static final String MIME_TYPE_APP = "application/*";
+    public static final String MIME_TYPE_STREAM = "application/octet-stream";
 
     private Activity activity;
     private Fragment fragment;
@@ -191,7 +197,7 @@ public class MediaHelper {
     private File guessFile(Context context, String defaultMimeType, Uri uri) throws IOException {
         String mimeType = FileUtils.getMimeType(context, uri);
         String extension = "";
-        if (!TextUtils.isEmpty(mimeType) && FileUtils.MIME_TYPE_STREAM.equalsIgnoreCase(mimeType)) {
+        if (!TextUtils.isEmpty(mimeType) && MIME_TYPE_STREAM.equalsIgnoreCase(mimeType)) {
             requestedMimeType = mimeType;
             extension = FileUtils.getExtension(uri + "");
             if (TextUtils.isEmpty(extension) && !TextUtils.isEmpty(defaultMimeType)) {
